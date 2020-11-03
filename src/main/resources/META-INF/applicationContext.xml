@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+<!--    <bean-->
+<!--            class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
+<!--    &lt;!&ndash; 获取配置文件 &ndash;&gt;-->
+<!--    <bean id="config"-->
+<!--          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--        <property name="locations">-->
+<!--            <list>-->
+<!--                <value>../../../../web/db-config.properties</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash; 获取数据源 &ndash;&gt;-->
+<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
+<!--        <property name="driverClassName">-->
+<!--            <value>${db.dirverClass}</value>-->
+<!--        </property>-->
+<!--        <property name="url">-->
+<!--            <value>${db.url}</value>-->
+<!--        </property>-->
+<!--        <property name="username">-->
+<!--            <value>${db.username}</value>-->
+<!--        </property>-->
+<!--        <property name="password">-->
+<!--            <value>${db.password}</value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <context:component-scan base-package="dao"/>-->
+<!--    <context:component-scan base-package="service"/>-->
+<!--    <context:component-scan base-package="web"/>-->
+    <!--
+       URL到处理器的映射列表可以配置多个
+       mappings属性健值为URL程序文件地址，而值为处理器的Bean名字，URL程序文件地址可采用路径匹配的模式，如：
+       com/mvc/t?st.jsp:匹配com/mvc/test.jsp、com/mvc/tast.jsp等 com/mvc /*.jsp
+       ：匹配所有com/mvc/下带jsp后缀的URL com/mvc
+       /**/test.jsp：匹配所有在com/mvc路径下或子孙路径下的test.jsp com/mvc
+       /**/*.jsp：匹配所有com/mvc路径下或子孙路径下带.jsp后缀的URL cn/**/web/bla.jsp：匹配
+       cn/option/web/dog.jsp cn/option/test/web/dog.jsp cn/web/dog.jsp的请求
+    -->
+
+
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+<!--        <property name="mappings">-->
+<!--            <value>-->
+<!--                user.do=userAction-->
+<!--            </value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;定义视图通过internalResourceView来表示使用的是Servlet/jsp技术&ndash;&gt;-->
+<!--    <bean id="viewResolver"-->
+<!--          class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="viewClass">-->
+<!--            <value>org.springframework.web.servlet.view.InternalResourceView-->
+<!--            </value>-->
+<!--        </property>-->
+<!--        &lt;!&ndash;jsp存放的目录&ndash;&gt;-->
+<!--        <property name="prefix">-->
+<!--            <value>/jsp/</value>-->
+<!--        </property>-->
+<!--        &lt;!&ndash;jsp文件的后缀&ndash;&gt;-->
+<!--        <property name="suffix">-->
+<!--            <value>.jsp</value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+<!--    <bean id="userDao" class="com.jimmy.springmvc.product.dao">-->
+<!--        <property name="dataSource"ref="dataSource"></property>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;定义控制器&ndash;&gt;-->
+<!--    <bean id="userAction" class="com.yjde.springmvc.UserController">-->
+<!--        <property name="dao">-->
+<!--            <ref bean="userDao"/>-->
+<!--        </property>-->
+<!--        <property name="commandClass">-->
+<!--            <value>com.yjde.springmvc.UserDao</value>-->
+<!--        </property>-->
+<!--        <property name="viewpage">-->
+<!--            <value>userInfo</value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+    <context:component-scan base-package="com.jimmy.springmvc.product.service" />
+
+    <context:component-scan base-package="com.jimmy.springmvc.product.entity" />
+
+    <context:component-scan base-package="com.jimmy.springmvc.product.dao" />
+</beans>
