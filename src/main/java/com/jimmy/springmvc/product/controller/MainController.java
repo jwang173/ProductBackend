@@ -94,7 +94,7 @@ public class MainController {
     }
 
 //    @RequestMapping(value="/addUser",method = RequestMethod.POST)
-    @PostMapping("addusers")
+    @PostMapping("/addusers")
     public ResponseEntity<?> addUser(@RequestBody User u) {
         userService.saveUser(u);
         return new ResponseEntity<Object>("Add user successfully",HttpStatus.OK);
